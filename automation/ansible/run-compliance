@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+# Runs the read-only Ansible compliance audit from anywhere inside the project.
+set -Eeuo pipefail
+umask 077
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
+
+PYTHON="$PROJECT_ROOT/.venv/bin/python"
+ANSIBLE="$PROJECT_ROOT/.venv/bin/ansible-playbook"
+
+if [[ ! -x "$PYTHON" || ! -x "$ANSIBLE" ]]; then
+    echo "ERROR: Project Python or Ansible executable not found in $PROJECT_ROOT/.venv" >&2
+    exit 1
+fi
+
+mkdir -p "$PROJECT_ROOT/reports"
+
+export ANSIBLE_CONFIG="$SCRIPT_DIR/ansible.cfg"
+
+exec "$PYTHON" - "$PROJECT_ROOT" <<'PY'
+import os
+import subprocess
+import sys
+from pathlib import Path
+from dotenv import load_dotenv
+
+project_root = Path(sys.argv[1])
+
+load_dotenv(project_root / ".env")
+
+if not os.getenv("NOC_USERNAME") or not os.getenv("NOC_PASSWORD"):
+    print("ERROR: NOC credentials are missing.", file=sys.stderr)
+    sys.exit(1)
+
+command = [
+    str(project_root / ".venv/bin/ansible-playbook"),
+    "automation/ansible/playbooks/compliance_audit.yml",
+]
+
+print("Starting Enterprise NOC Compliance Audit...\n")
+
+result = subprocess.run(
+    command,
+    cwd=project_root,
+    env=os.environ.copy(),
+    check=False,
+)
+
+sys.exit(result.returncode)
+PY

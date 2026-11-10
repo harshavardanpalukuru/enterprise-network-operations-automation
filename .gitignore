@@ -1,0 +1,53 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Ansible temporary files
+*.retry
+
+# Logs and generated reports
+logs/
+reports/
+*.log
+
+# Sensitive network configuration data
+/configs/backups/
+/configs/baselines/
+/configs/drift/
+
+# Temporary and backup files
+temp-repo*/
+*.bak
+
+# Operating system metadata
+.DS_Store
+Thumbs.db
+
+# Private keys and credentials
+*.pem
+*.key
+*.p12
+*.pfx
+*.ppk
+id_rsa
+id_ed25519
+
+# Additional development artifacts
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+*.swp
+*.swo
+
+# Timestamped backup files
+*.backup-*

@@ -1,0 +1,86 @@
+---
+network_compliance:
+
+  management_access:
+    acl_name: ACL-ADMIN-SSH
+    allowed_source: 10.10.99.10
+
+    required_acl_fragments:
+      - "permit 10.10.99.10"
+      - "deny any"
+
+    required_vty_fragments:
+      - "access-class ACL-ADMIN-SSH in"
+      - "login local"
+      - "transport input ssh"
+
+  switches:
+
+    SW1-HQ:
+      vlans:
+        - id: 10
+          name: HR_USERS
+          access_ports:
+            - Gi0/2
+
+        - id: 20
+          name: FINANCE
+          access_ports:
+            - Gi0/3
+
+        - id: 99
+          name: MGMT_NOC
+          access_ports:
+            - Gi0/1
+
+      trunk:
+        interface: Gi0/0
+        native_vlan: 1
+        allowed_vlans: [10, 20, 99]
+
+    SW2-Branch:
+      vlans:
+        - id: 30
+          name: BRANCH_OPS
+          access_ports:
+            - Gi0/1
+
+        - id: 99
+          name: BRANCH_MGMT
+
+      trunk:
+        interface: Gi0/0
+        native_vlan: 1
+        allowed_vlans: [30, 99]
+
+  routers:
+
+    R1-HQ:
+      interface_acls:
+        - interface: GigabitEthernet0/0.10
+          acl: ACL-HR-INBOUND
+
+        - interface: GigabitEthernet0/0.20
+          acl: ACL-FINANCE-INBOUND
+
+      static_routes:
+        - destination: 10.20.30.0/24
+          next_hop: 172.16.12.2
+
+        - destination: 10.20.99.0/24
+          next_hop: 172.16.12.2
+
+    R2-Branch:
+      interface_acls:
+        - interface: GigabitEthernet0/0.30
+          acl: ACL-BRANCH-OPS-INBOUND
+
+      static_routes:
+        - destination: 10.10.10.0/24
+          next_hop: 172.16.12.1
+
+        - destination: 10.10.20.0/24
+          next_hop: 172.16.12.1
+
+        - destination: 10.10.99.0/24
+          next_hop: 172.16.12.1

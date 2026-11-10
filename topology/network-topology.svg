@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1000" viewBox="0 0 1700 1000">
+<rect width="1700" height="1000" fill="#ffffff"/>
+<text x="20" y="36" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="bold" fill="#111827" text-anchor="start">Enterprise Network Operations &amp; Automation Lab</text>
+<text x="20" y="58" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#4b5563" text-anchor="start">Logical topology: HQ and Branch connected by a static-routed WAN, managed from a RHEL 9 NOC server</text>
+<rect x="1000" y="24" width="16" height="16" rx="3" fill="#2563eb"/>
+<text x="1022" y="37" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">VLAN 10 HR</text>
+<rect x="1120" y="24" width="16" height="16" rx="3" fill="#16a34a"/>
+<text x="1142" y="37" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">VLAN 20 Finance</text>
+<rect x="1280" y="24" width="16" height="16" rx="3" fill="#0d9488"/>
+<text x="1302" y="37" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">VLAN 30 Branch Ops</text>
+<rect x="1464" y="24" width="16" height="16" rx="3" fill="#d97706"/>
+<text x="1486" y="37" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">VLAN 99 Management</text>
+<rect x="20" y="80" width="890" height="700" rx="14" fill="#ffffff" stroke="#9ca3af" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="1100" y="80" width="580" height="700" rx="14" fill="#ffffff" stroke="#9ca3af" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="40" y="108" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#4b5563" text-anchor="start">HEADQUARTERS (HQ)</text>
+<text x="1120" y="108" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#4b5563" text-anchor="start">BRANCH OFFICE</text>
+<line x1="700" y1="255" x2="1210" y2="255" stroke="#7c3aed" stroke-width="4" stroke-linecap="round"/>
+<line x1="520" y1="250" x2="520" y2="420" stroke="#374151" stroke-width="4" stroke-linecap="round"/>
+<line x1="1390" y1="250" x2="1390" y2="420" stroke="#374151" stroke-width="4" stroke-linecap="round"/>
+<line x1="430" y1="500" x2="165" y2="640" stroke="#d97706" stroke-width="3" stroke-linecap="round"/>
+<line x1="520" y1="500" x2="520" y2="640" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+<line x1="610" y1="500" x2="790" y2="640" stroke="#16a34a" stroke-width="3" stroke-linecap="round"/>
+<line x1="1390" y1="500" x2="1390" y2="640" stroke="#0d9488" stroke-width="3" stroke-linecap="round"/>
+<rect x="340.0" y="140" width="360" height="170" rx="10" fill="#eef2ff" stroke="#3730a3" stroke-width="2"/>
+<text x="520" y="168" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="bold" fill="#111827" text-anchor="middle">R1-HQ</text>
+<text x="520" y="188" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#4b5563" text-anchor="middle">Cisco IOSv router</text>
+<circle cx="356.0" cy="212" r="5" fill="#2563eb"/>
+<text x="370.0" y="216" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="start">Gi0/0.10 10.10.10.1  [ACL-HR-INBOUND]</text>
+<circle cx="356.0" cy="234" r="5" fill="#16a34a"/>
+<text x="370.0" y="238" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="start">Gi0/0.20 10.10.20.1  [ACL-FINANCE-INBOUND]</text>
+<circle cx="356.0" cy="256" r="5" fill="#d97706"/>
+<text x="370.0" y="260" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="start">Gi0/0.99 10.10.99.1  (management)</text>
+<circle cx="356.0" cy="278" r="5" fill="#7c3aed"/>
+<text x="370.0" y="282" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="start">Gi0/1    172.16.12.1/30  (WAN)</text>
+<rect x="1210.0" y="140" width="360" height="170" rx="10" fill="#eef2ff" stroke="#3730a3" stroke-width="2"/>
+<text x="1390" y="168" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="bold" fill="#111827" text-anchor="middle">R2-Branch</text>
+<text x="1390" y="188" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#4b5563" text-anchor="middle">Cisco IOSv router</text>
+<circle cx="1226.0" cy="212" r="5" fill="#0d9488"/>
+<text x="1240.0" y="216" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="start">Gi0/0.30 10.20.30.1  [ACL-BRANCH-OPS-INBOUND]</text>
+<circle cx="1226.0" cy="234" r="5" fill="#d97706"/>
+<text x="1240.0" y="238" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="start">Gi0/0.99 10.20.99.1  (management)</text>
+<circle cx="1226.0" cy="256" r="5" fill="#7c3aed"/>
+<text x="1240.0" y="260" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="start">Gi0/1    172.16.12.2/30  (WAN)</text>
+<rect x="370.0" y="420" width="300" height="80" rx="10" fill="#ecfeff" stroke="#155e75" stroke-width="2"/>
+<text x="520" y="450" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="bold" fill="#111827" text-anchor="middle">SW1-HQ</text>
+<text x="520" y="474" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#4b5563" text-anchor="middle">Cisco IOSvL2 switch</text>
+<text x="520" y="490" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="middle">SVI Vlan99 10.10.99.2</text>
+<rect x="1240.0" y="420" width="300" height="80" rx="10" fill="#ecfeff" stroke="#155e75" stroke-width="2"/>
+<text x="1390" y="450" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="bold" fill="#111827" text-anchor="middle">SW2-Branch</text>
+<text x="1390" y="474" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#4b5563" text-anchor="middle">Cisco IOSvL2 switch</text>
+<text x="1390" y="490" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="middle">SVI Vlan99 10.20.99.2</text>
+<rect x="30.0" y="640" width="270" height="96" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="3"/>
+<text x="165" y="666" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#111827" text-anchor="middle">NOC-RHEL-Server</text>
+<text x="165" y="687" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="middle">ens37 10.10.99.10/24</text>
+<text x="165" y="705" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="middle">VLAN 99, static</text>
+<text x="165" y="723" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="middle">ens36 DHCP (VMware NAT)</text>
+<rect x="415.0" y="640" width="210" height="82" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="3"/>
+<text x="520" y="666" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#111827" text-anchor="middle">PC1-HQ-HR</text>
+<text x="520" y="687" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="middle">10.10.10.0/24</text>
+<text x="520" y="705" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="middle">VLAN 10, DHCP</text>
+<rect x="685.0" y="640" width="210" height="82" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="3"/>
+<text x="790" y="666" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#111827" text-anchor="middle">PC2-HQ-FIN</text>
+<text x="790" y="687" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="middle">10.10.20.0/24</text>
+<text x="790" y="705" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="middle">VLAN 20, DHCP</text>
+<rect x="1275.0" y="640" width="230" height="82" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="3"/>
+<text x="1390" y="666" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#111827" text-anchor="middle">PC3-Branch-OPS</text>
+<text x="1390" y="687" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="middle">10.20.30.0/24</text>
+<text x="1390" y="705" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" font-weight="normal" fill="#111827" text-anchor="middle">VLAN 30, DHCP</text>
+<text x="536" y="392" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#374151" text-anchor="start" stroke="#fff" stroke-width="5" paint-order="stroke" stroke-linejoin="round">802.1Q trunk Gi0/0: VLAN 10, 20, 99</text>
+<text x="1406" y="392" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#374151" text-anchor="start" stroke="#fff" stroke-width="5" paint-order="stroke" stroke-linejoin="round">802.1Q trunk Gi0/0: VLAN 30, 99</text>
+<text x="300" y="566" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#d97706" text-anchor="middle" stroke="#fff" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Gi0/1 access VLAN 99</text>
+<text x="530" y="600" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#2563eb" text-anchor="start" stroke="#fff" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Gi0/2 access VLAN 10</text>
+<text x="715" y="566" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#16a34a" text-anchor="start" stroke="#fff" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Gi0/3 access VLAN 20</text>
+<text x="1400" y="600" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#0d9488" text-anchor="start" stroke="#fff" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Gi0/1 access VLAN 30</text>
+<text x="1005" y="238" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#7c3aed" text-anchor="middle" stroke="#fff" stroke-width="5" paint-order="stroke" stroke-linejoin="round">WAN transit</text>
+<text x="1005" y="276" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#7c3aed" text-anchor="middle" stroke="#fff" stroke-width="5" paint-order="stroke" stroke-linejoin="round">172.16.12.0/30</text>
+<text x="706" y="248" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" fill="#7c3aed" text-anchor="start" stroke="#fff" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Gi0/1 .1</text>
+<text x="1204" y="248" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" fill="#7c3aed" text-anchor="end" stroke="#fff" stroke-width="5" paint-order="stroke" stroke-linejoin="round">Gi0/1 .2</text>
+<rect x="20" y="810" width="540" height="128" rx="10" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="38" y="838" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#111827" text-anchor="start">Routing</text>
+<text x="38" y="866" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">- Router-on-a-stick inter-VLAN routing on each router</text>
+<text x="38" y="890" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">- Static routes both ways over the WAN link</text>
+<text x="38" y="914" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">- IOS DHCP pools for VLANs 10, 20 and 30</text>
+<rect x="580" y="810" width="540" height="128" rx="10" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="598" y="838" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#111827" text-anchor="start">Access control</text>
+<text x="598" y="866" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">- Inbound extended ACLs on the user subinterfaces</text>
+<text x="598" y="890" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">- HR &lt;-&gt; Finance denied; Ops denied to management subnets</text>
+<text x="598" y="914" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">- HR &lt;-&gt; Branch Ops permitted</text>
+<rect x="1140" y="810" width="540" height="128" rx="10" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="1158" y="838" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#111827" text-anchor="start">Management</text>
+<text x="1158" y="866" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">- SSHv2 only; VTY limited to NOC 10.10.99.10 (ACL-ADMIN-SSH)</text>
+<text x="1158" y="890" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">- Python/Netmiko and Ansible run from NOC-RHEL-Server</text>
+<text x="1158" y="914" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#111827" text-anchor="start">- Management VLAN 99 at both sites</text>
+<text x="20" y="972" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5563" text-anchor="start">Drawn from the device configurations in network-configs/ and the addressing plan in docs/. Not a GNS3 screenshot (see gns3-topology.png).</text>
+</svg>

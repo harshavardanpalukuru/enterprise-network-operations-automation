@@ -1,0 +1,6 @@
+---
+ansible_connection: ansible.netcommon.network_cli
+ansible_network_os: cisco.ios.ios
+
+ansible_user: "{{ lookup('ansible.builtin.env', 'NOC_USERNAME') }}"
+ansible_password: "{{ lookup('ansible.builtin.env', 'NOC_PASSWORD') }}"
